@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admissions - Nandha Engineering College</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="bc.css">
+
+  <style>
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+  </style>
+</head>
+<body>
+    <div class="full-screen">
+        <div class="header-content" id="header-content">
+            <div class="pop-head">
+                <div class="logo" id="header-logo">
+                    <h1 id="app-development-title">Nandha Engineering College</h1>
+                </div>
+            </div>
+            <nav>
+                <ul id="nav-links" class="nav-links">
+                    <li><a href="#what-we-do">About us</a></li>
+                    <li><a href="#Future">Gallery</a></li>
+                    <li><a href="#tough_challenge">Academics</a></li>
+                    <li><a href="#trending">Admissions</a></li>
+                    <li><a href="#Future">Contact us</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </div> 
+    <br>
+    <br>
+  <div class="page-container">
+    <h1>Admissions</h1><br><br>
+    <p>Welcome to the Admissions page of Nandha Engineering College.</p> <br><br>
+    <div class="containerr">
+        <h2>College Student Admission Form</h2><br><br>
+        <form id="admissionForm" onsubmit="return validateForm()">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" >
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" >
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" >
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" >
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" ></textarea>
+
+            <label for="department">Department:</label>
+            <select id="department" name="department" >
+                <option value="" disabled selected>Select your department</option>
+                <option value="Chemical Engineering">Chemical Engineering</option>
+                <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+            </select>
+
+            <button class="buttonn" type="submit" style="background-color: #088869;;">Submit</button>
+        </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="contact-section">
+        <h3>Contact Us</h3>
+        <p>04294 225585, 226393</p>
+        <p><a href="mailto:principal@nandhaengg.org">principal@nandhaengg.org</a></p>
+        <p>Erode - Perundurai Main Road, Vaikkaalmedu, Erode - 638 052.</p>
+    </div>
+    <div class="social-section">
+        <h3>Social Links</h3>
+        <p><a href="https://www.facebook.com" target="_blank">Facebook</a></p>
+    </div>
+    <p>&copy; 2024 Nandha Engineering College. All Rights Reserved.</p>
+</footer>
+
+  <script>
+    function validateForm() {
+    const name = document.getElementById('name').value;
+    const dob = document.getElementById('dob').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const department = document.getElementById('department').value;
+
+    if (!name || !dob || !email || !phone || !address || !department) {
+        alert('Please fill in all the required fields.');
+        return false;
+    }
+
+    const phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(phone)) {
+        alert('Please enter a valid 10-digit phone number.');
+        return false;
+    }
+
+    return true;
+}
+
+  </script>
+</body>
+</html>
